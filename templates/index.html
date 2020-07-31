@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="icon" type="image/png" href="/static/fuji.png">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+
+    var userSound = new Audio('/static/userSend.mp3');
+    var botSound = new Audio('/static/botSend.mp3');
+
+    function playAudio1() {
+      userSound.play();
+    }
+    function playAudio2() {
+      botSound.play();
+    }
+    </script>
+    <style>
+
+body
+{
+font-family: Calibri;
+background-image: url('http://magdeleine.co/wp-content/uploads/2015/05/IMG_8229-1400x933.jpg');
+  background-repeat: no-repeat;
+   background-size: cover;
+}
+#reload{
+ border:none;
+ color:white;
+ font-size:20px;
+ background-color:transparent;
+ outline:none;
+ position: absolute;
+ margin-top:5px;
+ margin-left:5px;
+}
+.setBtn{
+ border:none;
+ color:rgba(255,255,255,0.7);
+ font-size:20px;
+ background-color:transparent;
+ outline:none;
+ margin-top:5px;
+ margin-left:40px;
+    }
+.closeSet{
+position:absolute;
+margin-top:10px;
+font-size:30px;
+margin-left:10px;
+background-color:transparent;
+color:rgba(255,255,255,0.8);
+outline:none;
+border:none;
+
+}
+.settings{
+ background-color: #f1f1f1;
+ border:1px solid black;
+ bottom:80px;
+right: 15px;
+z-index: 5;
+border:1px solid grey;
+width:320px;
+height:520px;
+font-family:Roboto;
+display:none;
+position:fixed;
+    }
+.setTitleC{
+width:320px;
+height:60px;
+//background-color:#341934;
+background-color:#0066ff;
+position:fixed;
+border-radius:5px 5px 0px 0px;
+border-bottom:1px solid grey;
+}
+.setTitle{
+font-family:Arial;
+font-size:18px;
+color:rgba(255,255,255,1);
+text-align:center;
+}
+
+ul{
+list-style-type:none;
+margin-top:60px;
+padding: 0;
+width: 320px;
+background-color: #f1f1f1;
+border-radius:5px;
+}
+li a {
+  display: block;
+  color: #000;
+  padding: 15px 16px;
+  text-decoration: none;
+  border-bottom:1px solid darkgrey;
+}
+
+li a:hover {
+  color: #0066ff;
+}
+li.dark a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-bottom:1px solid darkgrey;
+  margin-top:0px;
+  vertical-align:top;
+}
+
+li.dark a:hover {
+  color: #0066ff;
+}
+#night:hover{
+color: #000;
+}
+#Lan:hover{
+color: #000;
+}
+div.dark{
+width:50px;
+margin-left:240px;
+margin-top:-20px;
+}
+
+.toggle {
+position : relative ;
+display : inline-block;
+width : 40px;
+height : 20px;
+background-color: white;
+border-radius: 30px;
+border:1px solid gray;
+ }
+    /* After slide changes */
+.toggle:after {
+content: '';
+position: absolute;
+width: 15px;
+height: 15px;
+border-radius: 50%;
+background-color: grey;
+top: 2px;
+left: 1px;
+transition:  all 0.5s;
+    }
+    /* Toggle text */
+
+.checkbox:checked + .toggle::after {
+left : 22px;
+}
+
+.checkbox:checked + .toggle {
+background-color: black;
+}
+    /* Checkbox vanished */
+.checkbox {
+display : none;
+}
+
+.speech{
+margin-left:245px;
+margin-top:8.5px;
+color:#341934;
+font-size:20px;
+outline:none;
+height:33.5px;
+border-top:1px solid black;
+border-right:1px solid black;
+border-bottom:1px solid black;
+border-left:1px solid white;
+border-radius:0px 5px 5px 0px;
+position:absolute;
+background:transparent;
+}
+.open-button {
+  background-color:transparent;
+  padding:25px 25px;
+  color: grey;
+  font-size:40px;
+   position: fixed;
+  bottom: 23px;
+  right: 28px;
+  border:none;
+}
+.open-button:hover{
+color:black;
+border:1px solid black;
+border-radius:50%;
+background-color:grey;
+}
+.open-button:active,.open-button:link{
+border:none;
+color:black;
+}
+.close{
+color:rgba(255,255,255,0.7);
+background-color:transparent;
+margin-left:275px;
+margin-top:15px;
+font-size:20px;
+border:none;
+position:absolute;
+outline:none;
+}
+div.frame{
+background-color:#f5f5f5;
+position: absolute;
+bottom:80px;
+right: 15px;
+z-index: 5;
+border:1px solid grey;
+width:320px;
+height:520px;
+border-radius:5px;
+display:none;
+box-shadow:
+        0 2px 1px 0 rgba(255,255,255,0.4) inset,
+        0 6px 15px 2px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+div.title{
+width:320px;
+height:60px;
+//background-color:#341934;
+background-color:#0066ff;
+position:fixed;
+border-radius:5px 5px 0px 0px;
+border-bottom:1px solid grey;
+}
+div.titleContent{
+width:90px;
+height:40px;
+margin-left:200px;
+margin-top:10px;
+}
+div.logo{
+background-repeat: no-repeat;
+background-size: cover;
+width:40px;
+height:40px;
+display:block;
+margin-top:10px;
+margin-left:10px;
+margin-bottom:10px;
+border-radius:40px;
+position:absolute;
+//border:2px solid red;
+}
+.chat_container
+{
+background-color: rgba(102, 0, 51,0);
+margin-left:2px;
+margin-right:auto;
+width: 99%;
+//height: 400px;
+z-index: 5;
+border-radius:0px 0px 5px 5px;
+position:absolute;
+bottom:-410px;
+min-height:40px;
+overflow:auto;
+max-height:408px;
+}
+::-webkit-scrollbar
+{
+width:5px;
+margin-right:0px;
+}
+::-webkit-scrollbar-thumb
+{
+border-radius:6px;
+}
+#chatbox{
+margin-bottom:20px;
+}
+.chatSuggest{
+    padding: 5px;
+    border:1px solid blue;
+    margin-right: 5px;
+    margin-left: -1px;
+    margin-bottom:10px;
+    border-radius: 5px;
+    cursor: pointer;
+    float: left;
+        }
+.chatSuggest:hover{
+    font-size: 15px;
+    color: white;
+    background-color:#0066ff;
+}
+#userInput {
+background-color:#f5f5f5;
+margin-left: 0px;
+margin-right: auto;
+height:50px;
+width: 100%;
+border-radius:0px 0px 20px 20px;
+margin-top:470px;
+border-top:1px solid grey;
+}
+
+#textInput {
+-webkit-appearance:none;
+width:72%;
+height:30px;
+border-left: 1px solid black;
+border-top: 1px solid black;
+border-bottom: 1px solid black;
+border-right: 1px solid white;
+font-family: serif;
+border-radius:5px 0px 0px 5px;
+text-align:left;
+margin-top:8px;
+margin-left:10px;
+font-size: 17px;
+position:absolute;
+outline:0px;
+background:transparent;
+}
+::-webkit-input-placeholder {
+    font-family:serif;
+    font-size:14px;
+    color:#341934;
+    margin-left:5px;
+  }
+#textInput:hover,active{
+border-left: 1px solid black;
+border-top: 1px solid black;
+border-bottom: 1px solid black;
+border-right: 1px solid white;
+
+}
+.buttonImg{
+background-repeat: no-repeat;
+background-size: cover;
+width:22px;
+height:22px;
+border:none;
+color:#0066ff;
+outline:none;
+margin-left:280px;
+margin-top:-1px;
+position:absolute;
+}
+#buttonInput{
+border:none;
+outline:none;
+}
+.userText {
+color: white;
+font-family:serif;
+font-size: 15px;
+text-align: right;
+line-height: 20px;
+margin-right:5px;
+}
+.userText span {
+background-color: #0066ff;
+padding: 5px;
+color:black;
+border-radius:10px;
+
+}
+.botText {
+color: white;
+font-family: serif;
+font-size: 15px;
+text-align: right;text-align: left;
+margin-left:5px;
+line-height: 20px;
+margin-top:15px;
+}
+.avatar{
+    -webkit-border-radius: 2px;
+  border-radius: 2px;
+  max-width: 20px;
+  max-height: 20px;
+    }
+table.botText{
+background-color:#D5DBDB;
+font-size: 15px;
+font-family:Roboto;
+color:black;
+border-radius:10px;
+table-layout: fixed;
+text-align:left;
+border-collapse: collapse;
+max-width:80%;
+min-width:20%;
+margin-bottom:10px;
+text-align:left;
+}
+td,tr.botText{
+margin-left:-2px;
+background-color:transparent;
+vertical-align:top;
+padding:4px;
+border-spacing:0;
+border-collapse: collapse;
+}
+div.lag{
+  float: right;
+  width: 100%;
+  min-height: 15px;
+
+}
+table.userText{
+font-family:Roboto;
+//background-color:#341934;
+background-color:#0066ff;
+font-size: 15px;
+color:black;
+border-radius:10px;
+table-layout: fixed;
+text-align:left;
+border-collapse: collapse;
+max-width:75%;
+min-width:15%;
+float: right;
+margin-bottom:10px;
+text-align:left;
+text-align-last:left;
+margin-right:5px;
+}
+td,tr.userText{
+background-color:transparent;
+vertical-align:top;
+padding:4px;
+border-spacing:2px;
+border-collapse: collapse;
+margin-left:5px;
+}
+
+#typing {
+margin-left:2px;
+background-size:cover;
+visibility: visible;
+//position:absolute;
+bottom:5px;
+}
+.infoContainer{
+width:320px;
+height:520px;
+position:fixed;
+bottom:80px;
+right: 16px;
+z-index: 5;
+border-radius:5px;
+background-color:rgba(0,0,0,0.8);
+display:none;
+}
+.infoHolder{
+width:300px;
+height:400px;
+border:1px solid red;
+background-color: white;
+margin-top:30px;
+margin-left:8px;
+border-radius:10px;
+}
+.infoTitle{
+font-size:14px;
+color:red;
+font-family:Roboto;
+margin-left:30px;
+margin-top:40px;
+}
+.infoName{
+ width: 70%;
+ padding: 8px;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ resize: vertical;
+ margin-left:30px;
+ margin-top:30px;
+}
+.infoEmail{
+ width: 70%;
+ padding: 8px;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ resize: vertical;
+ margin-left:30px;
+ margin-top:10px;
+}
+.infoSubmit{
+background-color: #0066ff;
+  color: white;
+  padding: 8px 90px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left:40px;
+
+}
+.infoSubmit:hover{
+background-color: rgba(0, 102, 255,0.8);
+}
+.info-close{
+position:absolute;
+margin-left:265px;
+margin-top:-60px;
+outline:none;
+border:none;
+background:transparent;
+}
+div.lag{
+float:right;
+width:100%;
+min-height:20px;
+max-height:100%;
+margin-top:10px;
+margin-top:10px;
+}
+#verify{
+font-size:14px;
+color:red;
+font-family:Roboto;
+margin-left:30px;
+margin-top:3px;
+margin-bottom:-2px;
+}
+#tidbit {
+position:absolute;
+bottom:0;
+right:0;
+width: 250px;
+}
+</style>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body onload="getFirstResponse('Greetings!!')";>
+<button class="open-button"id="openButton" onclick="openForm()"><i class="fa fa-tint" aria-hidden="true"></i></button>
+<div class="frame" id="myframe">
+    <div class="title" id="mytitle">
+        <div class="logo" style="background-image:url('{{titleBg}}')"></div>
+        <button type="button"class="close" onclick="closeForm()"><i class="fa fa-times"></i></i></button>
+        <div class="titleContent">
+            <button id="reload" onclick="myButton()"><img src="{{refresh}}"></button>
+            <button class="setBtn" onclick="openSet()"><i class="fa fa-cog" aria-hidden="true"></i></button>
+</div>
+<div class="chat_container">
+<div id="chatbox">
+</div>
+    <div id="typing">
+            <table class="botText"><tr><td width="20px"><img class="avatar" src="{{botAvatar}}"  align="left"></td><td align="left";><img src="https://media.tenor.com/images/1054ba880c7662e48d9e1a7d6a80fc11/tenor.gif" width="50px" height="20px" style="border-radius:30px"></td></tr></table>
+    </div>
+    </div>
+</div>
+    <div id="userInput">
+<input id="textInput" type="text" placeholder="Type something..." lang="ja-jp"><button class="speech" id="speech" name="speech" onclick=record()><i class="fa fa-microphone" aria-hidden="true"></i></button>
+<button id="buttonInput" type="submit"><img  class="buttonImg" src="{{sendIcon}}"></button>
+</div>
+</div>
+<div class="infoContainer" id="myinfo">
+<div class="infoHolder">
+    <p class="infoTitle">Please Enter your Contact details here!!</p>
+<div class="info">
+     <button type="button"class="info-close" onclick="closeInfo()"><i class="fa fa-times"></i></button>
+<form id="form" action="{{url_for('insert')}}" METHOD="POST">
+  <input type="text" id="name" name="name" placeholder="Name" class="infoName"><br>
+    <input type="text" id="phone" name="phone" placeholder="Phone Number"class="infoEmail">
+    <label for="email" id="verify" style="color:red;visibility:hidden">Invalid Email address</label>
+    <input type="text" id="email" name="email" placeholder="Email ID"class="infoEmail" onfocus="closeVerify()">
+  <input type="text" id="purpose" name="purpose" placeholder="Purpose"class="infoEmail" onfocus="validateEmail()"><br><br>
+  <input type="submit" id="Csubmit" class="infoSubmit" value="Submit" onclick="chatSuggest('I hereby Submitted this information willingly');closeInfo()">
+</form>
+</div>
+</div>
+    </div>
+<div id="settings" class="settings">
+    <div class="setTitleC" id="setTitleC">
+         <button type="button"class="closeSet" onclick="closeSet()"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+        <p class="setTitle">Settings</p>
+    </div>
+    <ul class="set">
+        <li><a href="#transcript" onclick="printContent('chatbox')">Transcript</a></li>
+        <li><a id="Lan">Language preference</a></li>
+        <li><a id="night">Dark mode <div class="dark"><input type="checkbox" id="switch" class="checkbox" onclick="toggle()"/>
+        <label for="switch"class="toggle" id="toggle" ></label></div></a></li>
+
+    </ul>
+</div>
+<script>
+function botTyping(){
+				document.getElementById('typing').style.visibility = "visible";
+        setTimeout(getBotResponse, 200);
+			}
+function getFirstResponse(firstText) {
+$.get("/get", {msg:firstText}).done(function(data){
+var botHtml ='<table class="botText"><tr><td width="20px"><img class="avatar" src="{{botAvatar}}"  align="left"></td><td align="left";>' + data + '</td></tr></table>';
+document.getElementById('typing').style.visibility = "hidden";
+playAudio2();
+$("#chatbox").append(botHtml);
+//document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+});
+}
+function valid() {
+var rawText = $("#textInput").val();
+if(rawText.trim() == ""){
+ rawText = "Nothing"
+ }
+ else{
+ setTimeout(botTyping);
+ }
+ }
+function getBotResponse() {
+var rawText = $("#textInput").val();
+var userHtml = '<div class="lag"><table class="userText"><tr><td style="word-break: break-all;">' + rawText + '</td></tr></table</div>';
+var height = 0;
+$('div p').each(function(i, value){
+    height += parseInt($(this).height());
+});
+height += '500';
+$('div').animate({scrollTop: height});
+$("#textInput").val("");
+$("#chatbox").append(userHtml);
+//document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+$.get("/get", { msg: rawText }).done(function(data) {
+var botHtml ='<table class="botText"><tr><td width="20px"><img class="avatar" src="{{botAvatar}}"  align="left"></td><td id="data" align="left";>' + data + '</td></tr></table>';
+document.getElementById('typing').style.visibility = "hidden";
+var height = 0;
+$('div p').each(function(i, value){
+    height += parseInt($(this).height());
+});
+height += '500';
+$('div').animate({scrollTop: height});
+playAudio2();
+$("#chatbox").append(botHtml);
+//document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+});
+}
+function chatSuggest(firstText) {
+         
+          $.get("/get", { msg: firstText }).done(function(data) {
+            var botHtml = '<table class="botText"><tr><td width="20px"><img class="avatar" src="{{botAvatar}}"  align="left"></td><td align="left";>' + data + '</td></tr></table>';
+              playAudio2();
+            $("#chatbox").append(botHtml);
+            document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+          });
+          var height = 0;
+$('div').each(function(i,value){
+    height += parseInt($(this).height());
+});
+height += '500';
+$('div').animate({scrollTop: height});
+           var userHtml = '<p class="userText"><span>' + firstText + '</span></p>';
+          $("#textInput").val("");
+          $("#chatbox").append(userHtml);
+          document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+        }
+$("#textInput").keypress(function(e) {
+if(e.which == 13) {
+
+valid();
+ playAudio1();
+}
+});
+$("#buttonInput").click(function() {
+valid();
+ playAudio1();
+})
+</script>
+</script>
+<script>
+function openForm() {
+  document.getElementById("myframe").style.display = "block";
+  document.getElementById("openButton").style.display = "none";
+}
+function closeForm() {
+  document.getElementById("myframe").style.display = "none";
+  document.getElementById("openButton").style.display = "block";
+}
+</script>
+    <script>
+function openInfo() {
+  document.getElementById("myinfo").style.display = "block";
+  document.getElementById("Csubmit").disabled = true;
+  document.getElementById("Csubmit").style.backgroundColor ="grey";
+}
+
+function closeInfo() {
+  document.getElementById("myinfo").style.display = "none";
+  clearInfo();
+}
+</script>
+     <script>
+  function record(){
+      var recognition = new webkitSpeechRecognition();
+      recognition.lang = "en-GB";
+      recognition.onresult = function(event) {
+        console.log(event);
+        document.getElementById('textInput').value = event.results[0][0].transcript;
+        setTimeout(recordValid,5000);
+          }
+      recognition.start();
+   }
+$("#speech").keypress(function(e) {
+if(e.which == 13) {
+getBotResponse();
+}
+});
+</script>
+<script>
+    function recordValid(){
+    var selected = document.activeElement;
+if (selected.id == "textInput") {
+  return;
+}else{
+  valid();
+}
+  }
+</script>
+<script>
+    function recordValid(){
+    var selected = document.activeElement;
+if (selected.id == "textInput") {
+  return;
+}else{
+  valid();
+}
+  }
+
+</script>
+
+<script>
+function printContent(el){
+  var restorepage = document.body.innerHTML;
+  var printcontent = document.getElementById(el).innerHTML;
+  document.body.innerHTML = printcontent;
+  window.print();
+  document.body.innerHTML = restorepage;
+}
+</script>
+<script>
+function toggle() {
+  var checkBox = document.getElementById("switch");
+  var frame = document.getElementById("myframe");
+  var title = document.getElementById("mytitle");
+  var settitle = document.getElementById("setTitleC");
+  var userC = document.getElementById("userInput");
+  var textC = document.getElementById("textInput");
+  var buttonIn = document.getElementById("buttonInput");
+  if (checkBox.checked == true){
+    frame.style.backgroundColor = "#0c1627";
+    title.style.backgroundColor = "#121f3b";
+    settitle.style.backgroundColor ="#121f3b";
+    userC.style.backgroundColor ="#0c1627";
+    textC.style.backgroundColor ="#1e3762";
+    buttonIn.style.backgroundColor ="#0c1627";
+  } else {
+     frame.style.backgroundColor = "#f5f5f5";
+     title.style.backgroundColor = "#0066ff";
+     settitle.style.backgroundColor ="#0066ff";
+     userC.style.backgroundColor ="#f5f5f5";
+     textC.style.backgroundColor ="White";
+     buttonIn.style.backgroundColor ="#f5f5f5";
+  }
+}
+</script>
+<script>
+function openSet() {
+  document.getElementById("settings").style.display = "block";
+  document.getElementById("Lan").disabled = true;
+  document.getElementById("night").disabled = true;
+  document.getElementById("switch").disabled = true;
+}
+
+function closeSet() {
+  document.getElementById("settings").style.display = "none";
+}
+</script>
+<script type="text/javascript">
+//function swap(){
+             //   $().ready(function () {
+               //     $("textInput").each(function () {
+                        $(this).attr("lang", "ja");
+                 //   });
+                //});
+     //}
+  </script>
+  <script >
+  function myButton(){
+  $("#chatbox").load(location.href+" #chatbox>*","");
+  getFirstResponse('Greetings!!');
+  }
+</script>
+<script >
+  document.addEventListener('DOMContentLoaded',()=>{
+  document.querySelector('#form').onsubmit=(event) =>{
+    event.preventDefault();
+    const request = new XMLHttpRequest();
+    request.onload = () =>{ 
+      const data = JSON.parse(request.responseText);
+      if (data.success) {
+        console.log("form data submitted successfully");
+      } else {
+        console.log("same error");
+      }
+    }
+    const data = new FormData();
+    data.append('name', document.querySelector('#name').value);
+    data.append('phone',document.querySelector('#phone').value);
+    data.append('email',document.querySelector('#email').value);
+    data.append('purpose',document.querySelector('#purpose').value);
+    request.open('POST','/insert',true);
+    request.send(data);
+  }
+})
+</script>
+<script>
+function validateEmail(){
+            var text = document.getElementById("email").value;
+        var reg = /^([a-z 0-9\.-]+)@([a-z0-9-]+).([a-z]{2,8})(.[a-z]{2,8})?$/;
+        if (reg.test(text)==false)
+        {
+           document.getElementById("verify").style.visibility="visible";
+           document.getElementById("Csubmit").disabled = true;
+           document.getElementById("Csubmit").style.backgroundColor ="grey";
+           return false;
+        }
+        else{
+            document.getElementById("Csubmit").disabled = false;
+            document.getElementById("Csubmit").style.backgroundColor ="#0066ff";
+            return true;
+        }
+
+}
+function closeVerify(){
+document.getElementById("verify").style.visibility="Hidden";
+}
+function clearInfo(){
+$("#myinfo").load(location.href+" #myinfo>*","");
+}
+</script>
+</body>
+</html>
