@@ -1,0 +1,42 @@
+Human Says:,ChatBot Says:
+IDKnull,I couldn't understand your question. I operate better when asked short and direct questions.
+Nothing,I couldn't understand your question. I operate better when asked short and direct questions.
+Hi!!,"Hello, I'm Fujisakura's virtual assistant. I'm here to assist you"
+Hi,"Hello, I'm Fujisakura's virtual assistant. I'm here to assist you"
+Hello,"Hello, I'm Fujisakura's virtual assistant. I'm here to assist you"
+Hey,"Hello, I'm Fujisakura's virtual assistant. I'm here to assist you"
+What is your name,"Hello, I'm Fujisakura's virtual assistant. I'm here to assist you"
+How are you,I'm great. How are you?
+I'm good,How can I help you?
+I'm great,How can I help you?
+good,How can I help you?
+Good morning,Greetings. How can I help you?
+Good evening,Greetings. How can I help you?
+Good afternoon,Greetings. How can I help you?
+Thank you for your help,I'm happy to assist you visit again!
+Thank you ,I'm happy to assist you visit again!
+Thanks,I'm happy to assist you visit again!
+Greetings!!,"Hello there, I'm Fujisakura's virtual assistant. How can I help you?<br><br><a class=""chatSuggest"" onclick=""$(this).show(); chatSuggest('Could you tell me about fujisakura?')"";>About Us</a><a class=""chatSuggest"" onclick=""$(this).show(); chatSuggest('I would like to know about your Services')"";>Services</a><br><a class=""chatSuggest"" onclick=""$(this).show(); chatSuggest(' Could you tell me your Contact details?')"";>Contact us </a><a class=""chatSuggest"" onclick=""$(this).show(); chatSuggest('')"";> Career</a>"
+who is the directors of fujisakura?,The directors of fujisakura is<br> 1)Pazhamalai Jagadeesan san<br>2)Satheesh chelliah san<br>3)Satheeshkannan san<br>4)Madhavan san
+Could you tell me about fujisakura?,"Fujisakura Technologies is one of the fastest growing companies in Chennai, providing IT solutions and Sevices to the industry.<br><br><a class=""chatSuggest"" onclick=""$(this).show(); chatSuggest('who is the directors of fujisakura?')"";>Directors</a><a class=""chatSuggest"" onclick=""$(this).show(); chatSuggest('I would like to know your company policy?')"";>Company Policy</a>"
+Could you tell me your Contact details?,"Fujisakura has two sales office one in japan and another one located in india <br><br><a class=""chatSuggest"" onclick=""$(this).show(); chatSuggest('Could you tell me your India address?')"";>Sales office-India</a><a class=""chatSuggest"" onclick=""$(this).show(); chatSuggest('Could you tell me your Japan address?')"";>sales office-Japan</a><a class=""chatSuggest"" onclick=""openInfo()"";>Would you like to provide your contact details?</a>"
+Could you tell me your India address?,"Fujisakura Technology pvt ltd, No.4, 3rd Floor (3B), Sri Durga Enclave, Natesan Avenue, Karapakkam, Chennai - 600 097<br><a class=""chatSuggest"" onclick=""$(this).show(); chatSuggest('I want your EmailAddress')"";>Email</a><a class=""chatSuggest"" onclick=""$(this).show(); chatSuggest('I want your Phone number')"";>Phone Number</a>"
+Could you tell me your Japan address?,"6F, Kitagawa Building, 2-4-12 HigashiNihombashi,
+    Chuo-Ku, Tokyo 103-0004, Japan
+    PH:03-5829-6208, FAX:03-5829-6209"
+I want know about your contact info,"<a class=""chatSuggest"" onclick=""$(this).show(); chatSuggest('Could you tell me your  E-mail Address?')"";>Email</a><br><a class=""chatSuggest"" onclick=""$(this).show(); chatSuggest('Could you tell me your Phone number?')"";>Phone Number</a>"
+Could you tell me your  E-mail Address?,Email-hr@fujisakuratech.com
+Could you tell me your Phone number?,Phone:+91 44 2952 0058
+I would like to know your company policy?,To incorporate unique culture in the software industry by implementing Japanese Quality and Indian technology knowledge in software development is our main motto for our customers.
+I would like to know about your Services?,"FUJISAKURA services and strategies. IT support and management. We are specialists of all stripes, working offshore or onsite. From website and mobile app development to QA and testing, a comprehensive set of solutions for all things of IT.<br><br><a class=""chatSuggest"" onclick=""$(this).show(); chatSuggest('Could you tell me about AMO?')"";>AMO</a><a class=""chatSuggest"" onclick=""$(this).show(); chatSuggest('Could you tell me about Mobility?')"";>Mobility</a><br><a class=""chatSuggest"" onclick=""$(this).show(); chatSuggest('Could you tell me about SAP-ABAP?')"";>SAP-ABAP</a><a class=""chatSuggest"" onclick=""$(this).show(); chatSuggest('Could you tell me about PHP?')"";>PHP</a><a class=""chatSuggest"" onclick=""$(this).show(); chatSuggest('Could you tell me about PHYTHON?')"";>PHYTHON</a><a class=""chatSuggest"" onclick=""$(this).show(); chatSuggest('Could you tell me about Content Writting?')"";>Content Writting</a><br><a class=""chatSuggest"" onclick=""$(this).show(); chatSuggest('Could you tell me about Testing?')"";> Testing</a><a class=""chatSuggest"" onclick=""$(this).show(); chatSuggest('Could you tell me about Web Development?')"";> Web Development</a>
+
+"
+Could you tell me about AMO?,AMO is the process model which describes the execution approach for projects performing application support and maintenance activity.
+Could you tell me about Mobility?,"FujiSakura's Mobility service provide smart and robust mobile application development services, primarily for Apple's iOS, Google's."
+Could you tell me about Content Writting?,"Fujisakura Content writing team aims to provide the ""speech"" to a website, summarising what the website is about and explaining."
+Could you tell me about Web Development?,FujiSakura delivers integrated Web Application and Development services across the full range of your business and technical requirements.
+Could you tell me about Testing?,Fujisakura having number of Testing Engineers to test the ability of the developers in all the domain to make a capable IT Engineers to develop their carrier.
+Could you tell me about Python?,FujiSakura delivers integrated Web Application and Development services across the full range of your business and technical requirements.
+Could you tell me about PHP?,FujiSakura delivers integrated Web Application and Development services across the full range of your business and technical requirements.
+Could you tell me about SAP-ABAP?,FujiSakura delivers integrated Web Application and Development services across the full range of your business and technical requirements.
+I hereby Submitted this information willingly,Your information successfully submitted.Thank you for giving your informations.
